@@ -7,6 +7,7 @@ from streamlit_elements.core.exceptions import ElementsFrameError
 from streamlit_elements.core.callback import ElementsCallbackManager, ElementsCallback
 from streamlit_elements.core.element import Element
 from streamlit_elements.core.render import render_component
+from streamlit_elements.core.jscallback import JSCallback
 
 ELEMENTS_FRAME_KEY = f"{__name__}.elements_frame"
 
@@ -35,7 +36,7 @@ def new_frame(key):
         javascript = repr(frame)
 
         if javascript:
-            render_component(js=javascript, key=key, default="{}")
+            render_component(js=javascript, key=key, default="{}", license=session_state.get("mui_license", "no license"))
 
     finally:
         del session_state[ELEMENTS_FRAME_KEY]
@@ -80,6 +81,9 @@ class ElementsFrame:
         elif isinstance(obj, (Callable, ElementsCallback)):
             callback = self._callback_manager.register(obj)
             return repr(callback)
+
+        elif isinstance(obj, JSCallback):
+            return repr(obj)
 
         elif isinstance(obj, Mapping):
             items = (json.dumps(key) + ":" + self.serialize(value) for key, value in obj.items())

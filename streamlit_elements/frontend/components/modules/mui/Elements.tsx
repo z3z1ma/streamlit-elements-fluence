@@ -143,6 +143,11 @@ const dataGrid: ElementsRecord = {
   GridToolbarFilterButton: dynamic(() => import("@mui/x-data-grid").then(m => m.GridToolbarFilterButton), { loading: ElementsLoading, ssr: false }),
 }
 
+const dataGridPro: ElementsRecord = {
+  DataGridPro: dynamic(() => import("@mui/x-data-grid-pro").then(m => m.DataGridPro), { loading: ElementsLoading, ssr: false }),
+}
+
+
 const thirdParty: ElementsRecord = {
   SwipeableViews: dynamic(() => import("react-swipeable-views"), { loading: ElementsLoading, ssr: false }),
 }
@@ -150,6 +155,7 @@ const thirdParty: ElementsRecord = {
 const elements: ElementsRecord = {
   ...mui,
   ...dataGrid,
+  ...dataGridPro,
   ...thirdParty,
 }
 

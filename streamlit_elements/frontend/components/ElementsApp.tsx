@@ -18,6 +18,10 @@ import loadMuiIcons from "./modules/mui/Icons"
 import loadMuiLab from "./modules/mui/Lab"
 import loadNivo from "./modules/charts/Nivo"
 import loadPlayer from "./modules/media/Player"
+import loadInnerHTML from "./modules/extras/InnerHTML"
+
+import { LicenseInfo } from '@mui/x-license-pro';
+
 
 const loaders: ElementsLoaderRecord = {
   // Charts
@@ -43,6 +47,10 @@ const loaders: ElementsLoaderRecord = {
   muiElements: loadMuiElements,
   muiIcons: loadMuiIcons,
   muiLab: loadMuiLab,
+
+
+  // Extras
+  extrasInnerHTML: loadInnerHTML,
 }
 
 const getReplacer = () => {
@@ -87,6 +95,10 @@ const render = (module: string, element: string, props: any, children: React.Rea
 }
 
 const ElementsApp = ({ args, theme }: ElementsAppProps) => {
+  console.error("args", args)
+  if ('license' in args) {
+    LicenseInfo.setLicenseKey(args.license);
+  }
   const [js, setJs] = useState("return []")
 
   useEffect(() => {
@@ -104,7 +116,7 @@ const ElementsApp = ({ args, theme }: ElementsAppProps) => {
   return (
     <ElementsResizer>
       <ElementsTheme theme={theme}>
-        <ErrorBoundary fallback={<div/>} onError={error => send({ error: error.message })}>
+        <ErrorBoundary fallback={<div />} onError={error => send({ error: error.message })}>
           {jsx("div", null, ...new Function("render", "send", "window", js)(render, send, window))}
         </ErrorBoundary>
       </ElementsTheme>
