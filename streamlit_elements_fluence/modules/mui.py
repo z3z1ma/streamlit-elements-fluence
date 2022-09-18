@@ -1,4 +1,4 @@
-from streamlit_elements.core.frame import new_element
+from streamlit_elements_fluence.core.frame import new_element
 
 
 class MUIIcons:

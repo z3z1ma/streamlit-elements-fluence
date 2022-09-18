@@ -3,11 +3,11 @@ from contextlib import contextmanager
 from streamlit import session_state
 from typing import Callable, Iterable, Mapping
 
-from streamlit_elements.core.exceptions import ElementsFrameError
-from streamlit_elements.core.callback import ElementsCallbackManager, ElementsCallback
-from streamlit_elements.core.element import Element
-from streamlit_elements.core.render import render_component
-from streamlit_elements.core.jscallback import JSCallback
+from streamlit_elements_fluence.core.exceptions import ElementsFrameError
+from streamlit_elements_fluence.core.callback import ElementsCallbackManager, ElementsCallback
+from streamlit_elements_fluence.core.element import Element
+from streamlit_elements_fluence.core.render import render_component
+from streamlit_elements_fluence.core.jscallback import JSCallback
 
 ELEMENTS_FRAME_KEY = f"{__name__}.elements_frame"
 

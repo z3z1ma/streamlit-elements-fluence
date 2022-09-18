@@ -6,7 +6,7 @@ from streamlit import session_state
 from streamlit.components.v1 import components
 from typing import Callable
 
-from streamlit_elements.core.exceptions import ElementsFrontendError
+from streamlit_elements_fluence.core.exceptions import ElementsFrontendError
 
 CALLBACK_KEY = f"{__name__}.elements_callback_manager"
 FORBIDDEN_PARAM_CHAR_RE = re.compile("\W+")

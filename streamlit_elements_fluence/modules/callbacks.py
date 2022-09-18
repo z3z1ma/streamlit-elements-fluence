@@ -1,6 +1,6 @@
 from functools import partial
 from streamlit import session_state
-from streamlit_elements.core.callback import ElementsCallback
+from streamlit_elements_fluence.core.callback import ElementsCallback
 from typing import Callable, List, Union
 
 
