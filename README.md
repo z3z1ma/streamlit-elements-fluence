@@ -1,3 +1,72 @@
+# StreamLit Elements with Fluence Enhancements
+
+This package builds on the elegant and incredibly useful "Streamlit Elements" (<https://github.com/okld/streamlit-elements>). The "enhancements" are not so elegant but have proved to be useful in our application. The enhancement are:
+
+* Optional use of `<DataGridPro>` as a replacement for the simpler `<DataGrid>`. This requires a license for both development and deployment of production applications. You can buy a license and read the terms at <https://mui.com/r/x-get-license/>
+
+* Call JavaScript callbacks. This can be useful for example when defining a "valueFormatter" for a DataGrid.
+
+* Display a legacy mix of HTML and `<script>` tags using `<InnerHTML>`, see <https://github.com/christo-pr/dangerously-set-html-content-v1>
+
+## Example
+
+```python=
+import streamlit as st
+from streamlit_elements_fluence import elements, mui, JSCallback, extras
+
+st.session_state.mui_license = "a license that was purchased from https://mui.com/r/x-get-license"
+
+columns = [
+    {"field": "id", "headerName": "ID", "width": 90},
+    {"field": "firstName", "headerName": "First name", "width": 150, "editable": True},
+    {
+        "field": "lastName",
+        "headerName": "Last name",
+        "width": 150,
+        "editable": True,   
+        "valueFormatter": JSCallback("""(params) => {return params.value ? params.value.toUpperCase() : ''}"""),
+    },
+]
+
+rows = [
+    {"id": 1, "lastName": "Snow", "firstName": "Jon"},
+    {"id": 2, "lastName": "Lannister", "firstName": "Cersei"},
+    {"id": 3, "lastName": "Lannister", "firstName": "Jaime"},
+]
+
+with elements("an_example"):
+
+    mui.DataGridPro(
+        columns=columns,
+        rows=rows,
+        autoHeight=True,
+    )
+
+    mui.Typography("Click me too!", onClick=JSCallback("""(params) => {alert('Was also clicked!')}"""))
+    
+    extras.InnerHTML(html="""<div onClick="alert('Clicked!')"<b>Click me!</b></div>""")
+```
+
+Notes:
+
+* This example (in Example.py) demonstrates all the additional features
+
+* You need to import 'extras' for 'InnerHTML' and 'JSCallback for JavaScript callbacks
+  
+* To use DatGridPro you need a license key this is set in `st.session_state.mui_license`
+
+* `mui.DataGridPro` is used   in the same way as `mui.DataGrid`
+
+* You can use JSCallback to define, for example, a value formatter. This example changes the lastName value to upper case before display.
+
+* You can also use JSCallback to define a click handler (or anything else) on an element such as Typography. JSCallback is only really useful if you neeed to return a value deom the callback. Otherwise it woudl be smipler to write the callback in Python.
+
+* `InnerHTML` can be used to display anything, do anything given a lump of HTML containing embedded JavaScript. This is not clean but can be useful for integrating legacy or 3rd party code.
+
+______________________________________________________________________________________________________
+Original README follows:
+______________________________________________________________________________________________________
+
 ✨ Streamlit Elements &nbsp; [![GitHub][github_badge]][github_link] [![PyPI][pypi_badge]][pypi_link]
 =====================
 
