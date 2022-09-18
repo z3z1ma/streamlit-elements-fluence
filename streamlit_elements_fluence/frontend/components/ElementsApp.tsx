@@ -95,7 +95,6 @@ const render = (module: string, element: string, props: any, children: React.Rea
 }
 
 const ElementsApp = ({ args, theme }: ElementsAppProps) => {
-  console.error("args", args)
   if ('license' in args) {
     LicenseInfo.setLicenseKey(args.license);
   }

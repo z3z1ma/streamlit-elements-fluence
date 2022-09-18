@@ -1,6 +1,6 @@
-# StreamLit Elements with Fluence Enhancements
+# Streamlit Elements with Fluence Enhancements
 
-This package builds on the elegant and incredibly useful "Streamlit Elements" (<https://github.com/okld/streamlit-elements>). The "enhancements" are not so elegant but have proved to be useful in our application. The enhancement are:
+This package builds on the elegant and incredibly useful "Streamlit Elements" (<https://github.com/okld/streamlit-elements>). The "enhancements" are not so elegant but have proved to be useful in our application. The enhancements are:
 
 * Optional use of `<DataGridPro>` as a replacement for the simpler `<DataGrid>`. This requires a license for both development and deployment of production applications. You can buy a license and read the terms at <https://mui.com/r/x-get-license/>
 
