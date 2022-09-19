@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_elements_fluence import elements, mui, JSCallback, extras 
+from streamlit_elements_fluence import elements, mui, JSCallback, extras
 
 st.session_state.mui_license = "a license that was purchased from https://mui.com/r/x-get-license"
 
@@ -10,7 +10,7 @@ columns = [
         "field": "lastName",
         "headerName": "Last name",
         "width": 150,
-        "editable": True,   
+        "editable": True,
         "valueFormatter": JSCallback("""(params) => {return params.value ? params.value.toUpperCase() : ''}"""),
     },
 ]
@@ -29,6 +29,6 @@ with elements("an_example"):
         autoHeight=True,
     )
 
-    mui.Typography("Click me too!", onClick=JSCallback("""(params) => {alert('Was also clicked!')}"""))
+    mui.Typography("Click me!", onClick=JSCallback("""(params) => {alert('Clicked!')}"""))
 
     extras.InnerHTML(html="""<div onClick="alert('Clicked!')"<b>Click me!</b></div>""")

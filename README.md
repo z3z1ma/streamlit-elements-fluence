@@ -42,7 +42,7 @@ with elements("an_example"):
         autoHeight=True,
     )
 
-    mui.Typography("Click me too!", onClick=JSCallback("""(params) => {alert('Was also clicked!')}"""))
+    mui.Typography("Click me!", onClick=JSCallback("""(params) => {alert('Clicked!')}"""))
     
     extras.InnerHTML(html="""<div onClick="alert('Clicked!')"<b>Click me!</b></div>""")
 ```
@@ -53,13 +53,13 @@ Notes:
 
 * You need to import 'extras' for 'InnerHTML' and 'JSCallback for JavaScript callbacks
   
-* To use DatGridPro you need a license key this is set in `st.session_state.mui_license`
+* To use DatGridPro you need a license key. This is set in `st.session_state.mui_license`
 
 * `mui.DataGridPro` is used   in the same way as `mui.DataGrid`
 
-* You can use JSCallback to define, for example, a value formatter. This example changes the lastName value to upper case before display.
+* You can use JSCallback to define, for example, a value formatter. This formatter changes the lastName value to upper case before display.
 
-* You can also use JSCallback to define a click handler (or anything else) on an element such as Typography. JSCallback is only really useful if you neeed to return a value deom the callback. Otherwise it woudl be smipler to write the callback in Python.
+* You can also use JSCallback to define a click handler (or anything else) on an element such as Typography. JSCallback is only really useful if you neeed to return a value from the callback. Otherwise it woudl be smipler to write the callback in Python.
 
 * `InnerHTML` can be used to display anything, do anything given a lump of HTML containing embedded JavaScript. This is not clean but can be useful for integrating legacy or 3rd party code.
 
