@@ -27,6 +27,9 @@ with elements("an_example"):
         columns=columns,
         rows=rows,
         autoHeight=True,
+        components={
+            "Toolbar": mui.GridToolbar(direct=True),
+        },
     )
 
     mui.Typography("Click me!", onClick=JSCallback("""(params) => {alert('Clicked!')}"""))

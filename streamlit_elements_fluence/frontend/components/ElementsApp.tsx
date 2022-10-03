@@ -90,7 +90,9 @@ const render = (module: string, element: string, props: any, children: React.Rea
   if (loadedElement === undefined) {
     throw new Error(`Element ${element} does not exist in module ${module}`)
   }
-
+  if (props.direct) {
+    return loadedElement
+  }
   return jsx(loadedElement, props, ...children)
 }
 
