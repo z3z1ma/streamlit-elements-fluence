@@ -3,7 +3,7 @@ import json
 import re
 
 from streamlit import session_state
-from streamlit.components.v1 import components
+from streamlit.components.v1 import custom_component as components
 from typing import Callable
 
 from streamlit_elements_fluence.core.exceptions import ElementsFrontendError
