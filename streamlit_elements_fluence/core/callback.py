@@ -14,7 +14,17 @@ FORBIDDEN_PARAM_CHAR_RE = re.compile("\W+")
 
 def _patch_register_widget(register_widget):
     def wrapper_register_widget(*args, **kwargs):
-        user_key = kwargs.get("user_key", None)
+        try:
+            user_key = None
+            new_callback_data = kwargs[
+                "ctx"
+            ].session_state._state._new_session_state.get(
+                "streamlit_elements.core.frame.elements_frame", None
+            )
+            if new_callback_data is not None:
+                user_key = new_callback_data._key
+        except:
+            user_key = None
         callbacks = session_state.get(CALLBACK_KEY, None)
 
         # Check if a callback was registered for that user_key.
