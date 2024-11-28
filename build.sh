@@ -1,1 +1,1 @@
-cd streamlit_elements/frontend && npm install && npm run build
+cd streamlit_elements_fluence/frontend && npm install && npm run build
