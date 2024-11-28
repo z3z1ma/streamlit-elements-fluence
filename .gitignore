@@ -24,7 +24,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -189,9 +188,6 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
-
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -216,6 +212,7 @@ web_modules/
 
 # Optional REPL history
 .node_repl_history
+.next
 
 # Output of 'npm pack'
 *.tgz
@@ -232,7 +229,6 @@ web_modules/
 .parcel-cache
 
 # Next.js build output
-.next
 out
 
 # Nuxt.js build / generate output

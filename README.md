@@ -1,3 +1,15 @@
+# To edit and build yourself
+Do you typescript edits
+brew install node
+cd directory_where/you_want_build_folder
+npm install
+npm run build
+
+You will need to update typescript
+Note if not on macos you will need to update the del-source-maps command in packages.json 
+
+
+
 # Streamlit Elements with Fluence Enhancements
 
 This package builds on the elegant and incredibly useful "Streamlit Elements" (<https://github.com/okld/streamlit-elements>). The "enhancements" are not so elegant but have proved to be useful in our application. The enhancements are:

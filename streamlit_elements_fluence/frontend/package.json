@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "build-public": "npm run copy-monaco && npm run del-source-maps",
-    "del-source-maps": "find public -name '*.js' | xargs sed -i '/sourceMappingURL/d'",
+    "del-source-maps": "find public -name '*.js' | xargs sed -i '' '/sourceMappingURL/d'",
     "copy-monaco": "mkdir -p public/monaco && rm -rf public/monaco/vs && cp -r node_modules/monaco-editor/min/vs public/monaco/vs"
   },
   "dependencies": {
@@ -47,6 +47,7 @@
     "@nivo/voronoi": "^0.88.0",
     "@nivo/waffle": "^0.88.0",
     "@tinymce/tinymce-react": "^3.13.1",
+    "dangerously-set-html-content": "1.0.9",
     "dequal": "^2.0.2",
     "monaco-editor": "^0.33.0",
     "mousetrap": "^1.6.5",
@@ -58,7 +59,6 @@
     "react-player": "^2.10.0",
     "react-swipeable-views": "^0.14.0",
     "resize-observer-polyfill": "^1.5.1",
-    "dangerously-set-html-content": "1.0.9",
     "streamlit-component-lib": "^1.4.0"
   },
   "devDependencies": {
@@ -69,6 +69,6 @@
     "@types/react-swipeable-views": "^0.13.1",
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0",
-    "typescript": "4.6.2"
+    "typescript": "^5.7.2"
   }
 }

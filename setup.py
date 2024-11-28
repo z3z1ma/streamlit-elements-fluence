@@ -10,6 +10,6 @@ class CustomInstall(install):
 
 setup(
     name='streamlit-elements-fluence',
-    version='0.1.7',
+    version='0.1.8',
     cmdclass={'install': CustomInstall},
 )
