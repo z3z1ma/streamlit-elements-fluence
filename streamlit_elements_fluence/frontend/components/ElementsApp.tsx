@@ -20,7 +20,7 @@ import loadNivo from "./modules/charts/Nivo"
 import loadPlayer from "./modules/media/Player"
 import loadInnerHTML from "./modules/extras/InnerHTML"
 
-import { LicenseInfo } from '@mui/x-license-pro';
+import { LicenseInfo } from '@mui/x-license';
 
 
 const loaders: ElementsLoaderRecord = {

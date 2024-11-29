@@ -149,7 +149,7 @@ const dataGridPro: ElementsRecord = {
 
 
 const thirdParty: ElementsRecord = {
-  SwipeableViews: dynamic(() => import("react-swipeable-views"), { loading: ElementsLoading, ssr: false }),
+  SwipeableViews: dynamic(() => import("react-swipeable-views-react-18-fix"), { loading: ElementsLoading, ssr: false }),
 }
 
 const elements: ElementsRecord = {
